@@ -1,5 +1,5 @@
 <!--
-  هذه صورة مؤقتة (Placeholder) فقط.
+  هذه صورة مؤقتة (Placeholder) فقط — أيقونة بدون أي نص.
   لاستبدالها بصورتك الشخصية الحقيقية:
   1) ضع صورتك داخل هذا المجلد (images) وسمّها مثلاً: profile.jpg
   2) افتح ملف config.js وغيّر السطر:  profileImage: "images/profile-placeholder.svg"
@@ -13,9 +13,7 @@
     </linearGradient>
   </defs>
   <rect width="480" height="600" fill="url(#bg)"/>
-  <circle cx="240" cy="230" r="90" fill="none" stroke="#ff5a1f" stroke-width="4" opacity="0.8"/>
-  <circle cx="240" cy="205" r="42" fill="#2a2f36"/>
-  <path d="M150 340c0-55 40-95 90-95s90 40 90 95" fill="#2a2f36"/>
-  <text x="240" y="470" text-anchor="middle" fill="#a7acb3" font-family="Arial, sans-serif" font-size="22">أضف صورتك الشخصية هنا</text>
-  <text x="240" y="500" text-anchor="middle" fill="#6d7278" font-family="Arial, sans-serif" font-size="15">images/profile.jpg</text>
+  <circle cx="240" cy="300" r="100" fill="none" stroke="#ff5a1f" stroke-width="4" opacity="0.8"/>
+  <circle cx="240" cy="270" r="46" fill="#2a2f36"/>
+  <path d="M144 400c0-60 43-105 96-105s96 45 96 105" fill="#2a2f36"/>
 </svg>
