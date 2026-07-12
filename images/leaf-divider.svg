@@ -1,0 +1,9 @@
+<!--
+  زخرفة فاصل بسيطة على شكل غصن وأوراق — تُستخدم كفاصل بصري خفيف بين الأقسام.
+-->
+<svg viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6 16 H114" stroke="#6b9e6f" stroke-width="1.5" stroke-linecap="round"/>
+  <ellipse cx="34" cy="16" rx="9" ry="5" transform="rotate(-30 34 16)" fill="#6b9e6f"/>
+  <ellipse cx="60" cy="16" rx="10" ry="5.5" transform="rotate(20 60 16)" fill="#c79a54"/>
+  <ellipse cx="86" cy="16" rx="9" ry="5" transform="rotate(-20 86 16)" fill="#6b9e6f"/>
+</svg>
