@@ -1,0 +1,21 @@
+<!--
+  هذه صورة مؤقتة (Placeholder) فقط.
+  لاستبدالها بصورتك الشخصية الحقيقية:
+  1) ضع صورتك داخل هذا المجلد (images) وسمّها مثلاً: profile.jpg
+  2) افتح ملف config.js وغيّر السطر:  profileImage: "images/profile-placeholder.svg"
+     إلى:  profileImage: "images/profile.jpg"
+-->
+<svg viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1e23"/>
+      <stop offset="100%" stop-color="#0b0d10"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+  <circle cx="240" cy="230" r="90" fill="none" stroke="#ff5a1f" stroke-width="4" opacity="0.8"/>
+  <circle cx="240" cy="205" r="42" fill="#2a2f36"/>
+  <path d="M150 340c0-55 40-95 90-95s90 40 90 95" fill="#2a2f36"/>
+  <text x="240" y="470" text-anchor="middle" fill="#a7acb3" font-family="Arial, sans-serif" font-size="22">أضف صورتك الشخصية هنا</text>
+  <text x="240" y="500" text-anchor="middle" fill="#6d7278" font-family="Arial, sans-serif" font-size="15">images/profile.jpg</text>
+</svg>

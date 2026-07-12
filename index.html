@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- عنوان الصفحة والوصف يُسحبان تلقائياً من config.js (قسم meta) -->
+  <title>تحميل...</title>
+  <meta name="description" content="" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       شريط التنقل العلوي (Navbar)
+       الروابط بالأسفل تنتقل داخل نفس الصفحة (Scroll) — لا تحتاج تعديل
+       إلا إذا غيّرت أسماء الأقسام (id) في الأقسام بالأسفل
+       ============================================================ -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#hero" class="brand" id="nav-brand">...</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#about">من أنا</a></li>
+        <li><a href="#services">خدماتي</a></li>
+        <li><a href="#certifications">الشهادات</a></li>
+        <li><a href="#contact" class="nav-cta">تواصل معي</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1) قسم البداية (Hero) — المحتوى يُسحب من config.js > hero
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">مدرب رياضي متخصص في التأهيل</span>
+          <h1 id="hero-name">...</h1>
+          <p class="hero-title" id="hero-title">...</p>
+          <p class="hero-subtitle" id="hero-subtitle">...</p>
+
+          <blockquote class="quote-box" id="hero-quote">...</blockquote>
+
+          <div class="hero-actions">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="hero-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span id="hero-cta-text">تواصل معي عبر إنستقرام</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img id="hero-image" src="" alt="علي حسين حمدان الخليف" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2) قسم "من أنا" — المحتوى يُسحب من config.js > about
+         ============================================================ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" id="about-eyebrow">من أنا</span>
+          <h2 id="about-heading">من أنا</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" id="about-paragraphs">
+            <!-- الفقرات تُضاف تلقائياً بواسطة js/main.js -->
+          </div>
+
+          <div class="about-highlights" id="about-highlights">
+            <!-- بطاقات النقاط السريعة تُضاف تلقائياً بواسطة js/main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3) قسم "خدماتي" — المحتوى يُسحب من config.js > services
+         ============================================================ -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">خدماتي</span>
+          <h2 id="services-heading">خدماتي</h2>
+          <p id="services-subheading" class="section-sub">...</p>
+        </div>
+
+        <div class="grid grid-4" id="services-list">
+          <!-- بطاقات الخدمات تُضاف تلقائياً بواسطة js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4) قسم "الشهادات والاعتمادات" — من config.js > certifications
+         ============================================================ -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">الشهادات</span>
+          <h2 id="certifications-heading">الشهادات والاعتمادات</h2>
+          <p id="certifications-subheading" class="section-sub">...</p>
+        </div>
+
+        <div class="cert-list" id="certifications-list">
+          <!-- بطاقات الشهادات تُضاف تلقائياً بواسطة js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5) قسم "تواصل معي" الختامي — من config.js > contact
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 id="contact-heading">جاهز تبدأ رحلتك؟</h2>
+          <p id="contact-text">...</p>
+          <div class="contact-actions">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="contact-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span id="contact-cta-text">راسلني على إنستقرام</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline" id="contact-tiktok">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+              <span id="contact-tiktok-text">تيك توك</span>
+            </a>
+          </div>
+          <!-- رقم الجوال: يظهر تلقائياً فقط إذا عبّيته في config.js > social > phoneNumber -->
+          <p class="contact-phone" id="contact-phone" hidden></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span class="brand" id="footer-name">...</span>
+      <span id="footer-text">...</span>
+    </div>
+  </footer>
+
+  <!-- ترتيب التحميل مهم: config.js فيه المحتوى، main.js يقرأه ويعرضه -->
+  <script src="config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
