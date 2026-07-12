@@ -43,10 +43,8 @@
          1) قسم البداية (Hero) — المحتوى يُسحب من config.js > hero
          ============================================================ -->
     <section class="hero" id="hero">
-      <!-- عناصر زخرفية طبيعية خفيفة وشفافة بخلفية القسم — للزينة فقط، لا تحمل معنى للقارئ -->
-      <img src="images/organic-blob.svg" alt="" aria-hidden="true" class="hero-decor-blob" />
+      <!-- خلفية القسم صورة غابة حقيقية (مُعرَّفة في CSS) + زخرفة شجرة خفيفة فوقها -->
       <img src="images/tree-decoration.svg" alt="" aria-hidden="true" class="hero-decor-tree" />
-      <img src="images/hills-line.svg" alt="" aria-hidden="true" class="hero-decor-hills" />
       <div class="container hero-grid">
         <div class="hero-text">
           <span class="eyebrow">مدرب رياضي متخصص في التأهيل</span>
@@ -79,6 +77,8 @@
       <!-- عناصر زخرفية طبيعية: مسار ملتوٍ يرمز لرحلة التأهيل + ورقة متناثرة بالزاوية -->
       <img src="images/winding-path.svg" alt="" aria-hidden="true" class="about-decor-path" />
       <img src="images/leaf-scatter.svg" alt="" aria-hidden="true" class="about-decor-leaves" />
+      <!-- صورة أوراق حقيقية (Pexels) كعنصر جانبي خلف بطاقات النقاط السريعة -->
+      <img src="images/photo-leaves.jpg" alt="" aria-hidden="true" class="about-photo-panel" />
       <div class="container">
         <div class="section-head">
           <span class="eyebrow" id="about-eyebrow">من أنا</span>
@@ -104,6 +104,10 @@
          3) قسم "خدماتي" — المحتوى يُسحب من config.js > services
          ============================================================ -->
     <section class="section section-alt" id="services">
+      <!-- شريط بانورامي بصورة جبال حقيقية (Pexels) أعلى القسم -->
+      <div class="services-photo-strip">
+        <img src="images/photo-mountains.jpg" alt="" aria-hidden="true" />
+      </div>
       <!-- عناصر زخرفية طبيعية: توهج عضوي ناعم + ورقة متناثرة بالزاوية -->
       <img src="images/organic-blob.svg" alt="" aria-hidden="true" class="services-decor-blob" />
       <img src="images/leaf-scatter.svg" alt="" aria-hidden="true" class="services-decor-leaves" />
@@ -127,8 +131,9 @@
          4) قسم "الشهادات والاعتمادات" — من config.js > certifications
          ============================================================ -->
     <section class="section" id="certifications">
-      <!-- ورقة متناثرة خفيفة بزاوية القسم -->
+      <!-- ورقة متناثرة خفيفة بزاوية القسم + صورة أوراق حقيقية دائرية بالزاوية المقابلة -->
       <img src="images/leaf-scatter.svg" alt="" aria-hidden="true" class="certifications-decor-leaves" />
+      <img src="images/photo-leaves.jpg" alt="" aria-hidden="true" class="certifications-photo-corner" />
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">الشهادات</span>

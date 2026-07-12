@@ -6,8 +6,8 @@
      image: "images/certificate-placeholder.svg"  إلى  image: "images/certificate-visbody.jpg"
 -->
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" fill="#101d2c"/>
-  <circle cx="100" cy="80" r="42" fill="none" stroke="#c8983f" stroke-width="5"/>
-  <path d="M100 55 108 75 130 78 113 93 118 115 100 103 82 115 87 93 70 78 92 75Z" fill="#c8983f"/>
-  <path d="M78 118 68 155 100 140 132 155 122 118" fill="none" stroke="#c8983f" stroke-width="5" stroke-linejoin="round"/>
+  <rect width="200" height="200" fill="#eef2df"/>
+  <circle cx="100" cy="80" r="42" fill="none" stroke="#1c7a34" stroke-width="5"/>
+  <path d="M100 55 108 75 130 78 113 93 118 115 100 103 82 115 87 93 70 78 92 75Z" fill="#8a5a3a"/>
+  <path d="M78 118 68 155 100 140 132 155 122 118" fill="none" stroke="#1c7a34" stroke-width="5" stroke-linejoin="round"/>
 </svg>

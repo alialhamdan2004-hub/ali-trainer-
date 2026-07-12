@@ -4,7 +4,7 @@
 -->
 <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
   <path d="M0 140 C 100 90, 180 130, 260 100 C 340 70, 400 120, 480 95 C 560 70, 620 110, 700 85 C 750 70, 780 90, 800 80"
-        fill="none" stroke="#c8983f" stroke-width="2.5"/>
+        fill="none" stroke="#2fa84a" stroke-width="2.5"/>
   <path d="M0 165 C 90 130, 200 160, 300 135 C 420 105, 520 150, 620 125 C 700 105, 760 130, 800 118"
-        fill="none" stroke="#f5efe0" stroke-width="2"/>
+        fill="none" stroke="#8a5a3a" stroke-width="2"/>
 </svg>
