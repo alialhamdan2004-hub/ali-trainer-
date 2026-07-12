@@ -46,7 +46,7 @@ const SITE_CONTENT = {
     ctaText: "تواصل معي عبر إنستقرام",
     // صورة الغلاف/الصورة الشخصية — استبدلها بصورتك الحقيقية بنفس الاسم داخل مجلد images
     // الاسم المتوقع: images/profile.jpg  (إذا رفعت صورة بنفس الاسم بتظهر تلقائياً)
-    profileImage: "images/profile-placeholder.svg",
+    profileImage: "images/profile.jpg",
   },
 
   // ------------------------------------------------------------------
