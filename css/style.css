@@ -88,9 +88,23 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/*
+  الخلفية الضبابية (blur) موضوعة على ::before وليس مباشرة على .site-header
+  لأن خاصية backdrop-filter على عنصر يحتوي على قائمة الجوال (position: fixed)
+  "تحبس" القائمة داخل حدود الهيدر بدل الشاشة كاملة، وهذا كان سبب تراكب صورة
+  البروفايل مع زر "تواصل معي" في القائمة العلوية على الجوال.
+*/
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(11, 13, 16, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav {
@@ -332,7 +346,13 @@ ul { list-style: none; }
 /* ============================== الاستجابة للجوال (Responsive) ============================== */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-media { order: -1; max-width: 320px; margin: 0 auto; }
+  /* ترتيب Hero على الجوال: القائمة (خارج هذا القسم) ← الصورة ← العنوان ← الأزرار */
+  .hero-media {
+    order: -1;
+    max-width: 280px;
+    aspect-ratio: 4 / 5; /* نسبة ثابتة عرض:ارتفاع حتى لا يطول الصندوق بشكل عشوائي */
+    margin: 0 auto 32px;  /* مسافة واضحة بين الصورة والعنوان اللي بعدها */
+  }
   .about-grid { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -370,6 +390,8 @@ ul { list-style: none; }
 
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
+  .hero { padding-top: 24px; }
+  .hero-media { max-width: 220px; margin: 0 auto 24px; }
   .hero-text h1 { font-size: 1.5rem; }
   .hero-title { font-size: 1.1rem; }
   .section-head h2 { font-size: 1.5rem; }
