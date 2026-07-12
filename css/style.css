@@ -10,20 +10,24 @@
 
 :root {
   /* --- الألوان الأساسية: عدّل هنا فقط لتغيير هوية الموقع بالكامل ---
-     نظام ألوان مستوحى من الطبيعة: أخضر غابي + بني/ذهبي ترابي + عنابي دافئ للأزرار */
-  --color-bg: #1b2118;          /* الخلفية الرئيسية (أخضر غابي داكن جداً) */
-  --color-bg-alt: #232a1e;      /* خلفية بديلة للأقسام المتناوبة */
-  --color-surface: #2a3323;     /* خلفية البطاقات (زيتوني داكن) */
-  --color-border: rgba(244, 238, 224, 0.1);
+     هوية كحلي طبي/رياضي + برتقالي حيوي للأزرار + لمسات ذهبية خفيفة للتفاصيل
+     (لا يوجد أي أخضر أو زيتوني بالموقع) */
+  --color-bg: #0c1420;          /* الخلفية الرئيسية (كحلي داكن جداً يميل للأسود) */
+  --color-bg-alt: #101d2c;      /* خلفية بديلة للأقسام المتناوبة (كحلي داكن) */
+  --color-surface: #182839;     /* خلفية البطاقات (كحلي أفتح شوي - يعطي هوية الزي الطبي) */
+  --color-border: rgba(245, 239, 224, 0.1);
 
-  --color-text: #f4efe2;        /* لون النص الأساسي (بيج دافئ فاتح) */
-  --color-text-muted: #b8c2a8;  /* لون النص الثانوي (أخضر مائل للبيج باهت) */
+  --color-text: #f5efe0;        /* لون النص الأساسي (أبيض كريمي دافئ) */
+  --color-text-muted: #a3aebb;  /* لون النص الثانوي (رمادي مائل للأزرق فاتح) */
 
-  --color-primary: #6b9e6f;       /* أخضر غابي/زيتوني - اللون الأساسي للهوية */
-  --color-primary-dark: #3f6b45;  /* أخضر غامق للتدرجات والحدود */
-  --color-secondary: #c79a54;     /* ذهبي/بني ترابي دافئ - لون ثانوي */
-  --color-accent: #b5573f;        /* عنابي دافئ خفيف - للأزرار والعناصر المهمة */
-  --color-accent-dark: #8f4230;
+  --color-primary: #5b84ad;       /* أزرق كحلي دافئ (قريب من الزي الطبي) - اللون الأساسي للهوية */
+  --color-primary-dark: #23405c;  /* كحلي أغمق للتدرجات وخلفية الهيدر */
+  --color-secondary: #c8983f;     /* ذهبي/نحاسي خفيف - لتفاصيل دقيقة فقط (حدود، أيقونات) */
+  --color-accent: #ff5a1f;        /* برتقالي حيوي ومشرق - للأزرار والعناصر التفاعلية فقط */
+  --color-accent-dark: #d6480f;
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 14px 30px rgba(0, 0, 0, 0.35);
 
   /* --- الخط والمسافات --- */
   --font-main: "Cairo", "Tahoma", sans-serif;
@@ -73,10 +77,10 @@ ul { list-style: none; }
 .btn-primary {
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
   color: #fff;
-  box-shadow: 0 8px 24px rgba(181, 87, 63, 0.35);
+  box-shadow: 0 8px 24px rgba(255, 90, 31, 0.35);
 }
 
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(181, 87, 63, 0.45); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255, 90, 31, 0.45); }
 
 .btn-outline {
   background: transparent;
@@ -105,7 +109,7 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(27, 33, 24, 0.85);
+  background: rgba(12, 20, 32, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -188,7 +192,7 @@ ul { list-style: none; }
 /* ============================== قسم البداية (Hero) ============================== */
 .hero { padding: 64px 0 96px; position: relative; overflow: hidden; }
 
-/* زخرفة الشجرة: خلفية خفيفة جداً خلف المحتوى، لا تؤثر على القراءة أو التفاعل */
+/* زخارف Hero الطبيعية: خلفية خفيفة جداً خلف المحتوى، لا تؤثر على القراءة أو التفاعل */
 .hero-decor-tree {
   position: absolute;
   bottom: -8%;
@@ -196,6 +200,29 @@ ul { list-style: none; }
   width: 380px;
   max-width: 55%;
   opacity: .07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-decor-blob {
+  position: absolute;
+  top: -12%;
+  inset-inline-start: -10%;
+  width: 460px;
+  max-width: 65%;
+  opacity: .1;
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-decor-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: .12;
   pointer-events: none;
   z-index: 0;
 }
@@ -241,6 +268,7 @@ ul { list-style: none; }
   font-size: 1.05rem;
   margin-bottom: 32px;
   max-width: 520px;
+  box-shadow: var(--shadow-sm);
 }
 
 .hero-media {
@@ -273,6 +301,31 @@ ul { list-style: none; }
 }
 
 /* ============================== قسم "من أنا" ============================== */
+#about { position: relative; overflow: hidden; }
+#about .container { position: relative; z-index: 1; }
+
+/* مسار ملتوٍ خفيف يرمز لرحلة التأهيل، وورقة متناثرة بزاوية القسم */
+.about-decor-path {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 4%;
+  height: 100%;
+  width: auto;
+  opacity: .08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-decor-leaves {
+  position: absolute;
+  bottom: -5%;
+  inset-inline-start: -3%;
+  width: 140px;
+  opacity: .12;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.3fr .9fr;
@@ -293,6 +346,7 @@ ul { list-style: none; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 20px;
+  box-shadow: var(--shadow-sm);
 }
 
 .highlight-card h4 { font-size: 1rem; font-weight: 800; margin-bottom: 6px; color: var(--color-secondary); }
@@ -302,19 +356,60 @@ ul { list-style: none; }
 .grid { display: grid; gap: 22px; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
+/* ============================== قسم "خدماتي" ============================== */
+#services { position: relative; overflow: hidden; }
+#services .container { position: relative; z-index: 1; }
+
+.services-decor-blob {
+  position: absolute;
+  bottom: -18%;
+  inset-inline-end: -8%;
+  width: 420px;
+  max-width: 60%;
+  opacity: .08;
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services-decor-leaves {
+  position: absolute;
+  top: 6%;
+  inset-inline-start: 2%;
+  width: 120px;
+  opacity: .12;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ============================== بطاقات الخدمات ============================== */
 .service-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 26px 22px;
-  transition: transform .2s ease, border-color .2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
-.service-card:hover { transform: translateY(-4px); border-color: var(--color-primary); }
+.service-card:hover { transform: translateY(-4px); border-color: var(--color-accent); box-shadow: var(--shadow-md); }
 
 .service-card h3 { font-size: 1.08rem; font-weight: 800; margin-bottom: 10px; }
 .service-card p { color: var(--color-text-muted); font-size: .95rem; }
+
+/* ============================== قسم "الشهادات" ============================== */
+#certifications { position: relative; overflow: hidden; }
+#certifications .container { position: relative; z-index: 1; }
+
+.certifications-decor-leaves {
+  position: absolute;
+  top: -4%;
+  inset-inline-end: -2%;
+  width: 130px;
+  opacity: .1;
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* ============================== بطاقات الشهادات ============================== */
 .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
@@ -327,6 +422,7 @@ ul { list-style: none; }
   border-radius: var(--radius);
   padding: 22px;
   align-items: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .cert-card img {
@@ -349,6 +445,7 @@ ul { list-style: none; }
   border: 1px solid var(--color-border);
   border-radius: 28px;
   padding: 72px 32px;
+  box-shadow: var(--shadow-md);
 }
 
 .cta-banner h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); font-weight: 900; margin-bottom: 14px; }
@@ -396,6 +493,18 @@ ul { list-style: none; }
   z-index: 0;
 }
 
+/* خط تلال رفيع أعلى الفوتر */
+.footer-decor-hills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: .1;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ============================== الاستجابة للجوال (Responsive) ============================== */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
@@ -439,6 +548,13 @@ ul { list-style: none; }
   .cert-list { grid-template-columns: 1fr; }
   .cert-card { flex-direction: column; text-align: center; }
   .cert-card img { margin: 0 auto; }
+
+  /* تصغير الزخارف الطبيعية على الجوال حتى تبقى خفيفة ولا تشتت المحتوى */
+  .hero-decor-blob, .services-decor-blob { width: 260px; }
+  .hero-decor-tree, .footer-decor-tree { width: 200px; }
+  .about-decor-path { opacity: .05; }
+  .about-decor-leaves, .services-decor-leaves, .certifications-decor-leaves { width: 90px; }
+  .section-divider { width: 70px; }
 }
 
 @media (max-width: 480px) {

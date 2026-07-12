@@ -1,0 +1,11 @@
+<!--
+  فاصل زخرفي بين الأقسام على شكل غصن منحني بأوراق — بديل عن الخط العادي.
+-->
+<svg viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6 30 C 55 6, 145 42, 194 16" fill="none" stroke="#c8983f" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="40" cy="19" rx="10" ry="5.5" transform="rotate(-35 40 19)" fill="#c8983f"/>
+  <ellipse cx="72" cy="30" rx="9" ry="5" transform="rotate(15 72 30)" fill="#f5efe0"/>
+  <ellipse cx="106" cy="24" rx="10" ry="5.5" transform="rotate(-10 106 24)" fill="#c8983f"/>
+  <ellipse cx="140" cy="30" rx="9" ry="5" transform="rotate(25 140 30)" fill="#f5efe0"/>
+  <ellipse cx="170" cy="20" rx="9" ry="5" transform="rotate(-20 170 20)" fill="#c8983f"/>
+</svg>

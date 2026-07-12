@@ -1,0 +1,11 @@
+<!--
+  مجموعة أوراق متناثرة بزوايا مختلفة — تُستخدم كزخرفة خفيفة بزوايا الأقسام.
+-->
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#c8983f">
+    <path d="M30 20 C 55 15, 65 35, 45 55 C 25 45, 15 25, 30 20 Z" transform="rotate(10 40 37)"/>
+    <path d="M30 20 C 55 15, 65 35, 45 55 C 25 45, 15 25, 30 20 Z" transform="translate(70,60) rotate(-25 40 37) scale(0.7)"/>
+  </g>
+  <path d="M30 20 C 55 15, 65 35, 45 55 C 25 45, 15 25, 30 20 Z" transform="translate(20,85) rotate(60 40 37) scale(0.55)" fill="#f5efe0"/>
+  <path d="M32 22 L44 50" stroke="#a3aebb" stroke-width="1.5" fill="none" opacity=".5"/>
+</svg>
