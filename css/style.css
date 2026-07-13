@@ -231,9 +231,15 @@ ul { list-style: none; }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1fr 1fr;
   gap: 56px;
-  align-items: center;
+  /* end بدل center: يثبّت الصورة بأسفل القسم (واقفة على "أرضية") بدل ما تطفو
+     بمنتصف الخلفية؛ النص يرجع لمنتصفه الطبيعي عبر align-self بالأسفل */
+  align-items: end;
+}
+
+.hero-text {
+  align-self: center;
 }
 
 .hero-text h1 {
@@ -264,19 +270,49 @@ ul { list-style: none; }
   aspect-ratio: 4 / 5;
 }
 
+/* ظل تماس ناعم تحت القدمين مباشرة — يعطي إحساس ثقل وإنه واقف على أرضية حقيقية */
+.hero-media::before {
+  content: "";
+  position: absolute;
+  bottom: 6%;
+  left: 12%;
+  right: 12%;
+  height: 12%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 72%);
+  filter: blur(4px);
+  z-index: 0;
+}
+
+/* ضباب خفيف جداً عند أسفل الصورة، يساعد الصورة تندمج بأرضية الغابة */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 26%;
+  background: linear-gradient(to top, rgba(235, 240, 225, 0.28), rgba(235, 240, 225, 0));
+  pointer-events: none;
+  z-index: 2;
+}
+
 /*
-  صورة profile.png نفسها بخلفية شفافة حقيقية (Alpha)، فتندمج مباشرة مع
-  صورة الغابة خلفها بدون أي صندوق أو حواف — ما تحتاج تأثير تدرّج (mask) لأن
-  الشفافية موجودة بالصورة نفسها. أضفنا drop-shadow خفيف تحت الشخص عشان
-  يبين له عمق وما يبين "طافي" فوق الخلفية.
+  صورة profile.png نفسها بخلفية شفافة حقيقية (Alpha) مع حواف متلاشية
+  (Feathered) وتدرّج لوني دافئ مطبّق مسبقاً على الصورة نفسها، فتندمج مباشرة
+  مع صورة الغابة خلفها بدون أي صندوق أو حواف حادة. الصورة مثبّتة بأسفل
+  الصندوق (object-position: bottom) عشان تبان واقفة على أرضية، مو عائمة
+  بالمنتصف. أضفنا drop-shadow خفيف تحتها عشان تبين لها عمق طبيعي.
   إذا رجعت تستخدم صورة بخلفية عادية (مو شفافة)، رجّع object-fit: cover
   وأضف تأثير mask-image زي القديم عشان تتلاشى حوافها.
 */
 .hero-media img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.45));
+  object-position: bottom;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.4));
 }
 
 /* ============================== فاصل زخرفي بين الأقسام ============================== */
