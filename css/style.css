@@ -231,15 +231,9 @@ ul { list-style: none; }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  /* end بدل center: يثبّت الصورة بأسفل القسم (واقفة على "أرضية") بدل ما تطفو
-     بمنتصف الخلفية؛ النص يرجع لمنتصفه الطبيعي عبر align-self بالأسفل */
-  align-items: end;
-}
-
-.hero-text {
-  align-self: center;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 40px;
+  align-items: center;
 }
 
 .hero-text h1 {
@@ -265,54 +259,27 @@ ul { list-style: none; }
   margin-bottom: 28px;
 }
 
+/*
+  بطاقة/إطار واضح حول الصورة — تصميم مقصود بدل محاولة "دمج" الصورة بالخلفية.
+  خلفية شبه شفافة داكنة + حد ذهبي رفيع + ظل ناعم يعطيها عمق واحترافية.
+  لتغيير لون الحد: بدّل قيمة border إلى var(--color-primary) بدل الذهبي.
+*/
 .hero-media {
   position: relative;
   aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(24, 42, 26, 0.8), rgba(14, 26, 16, 0.7));
+  border: 3px solid #c8983f;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* ظل تماس ناعم تحت القدمين مباشرة — يعطي إحساس ثقل وإنه واقف على أرضية حقيقية */
-.hero-media::before {
-  content: "";
-  position: absolute;
-  bottom: 6%;
-  left: 12%;
-  right: 12%;
-  height: 12%;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 72%);
-  filter: blur(4px);
-  z-index: 0;
-}
-
-/* ضباب خفيف جداً عند أسفل الصورة، يساعد الصورة تندمج بأرضية الغابة */
-.hero-media::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 26%;
-  background: linear-gradient(to top, rgba(235, 240, 225, 0.28), rgba(235, 240, 225, 0));
-  pointer-events: none;
-  z-index: 2;
-}
-
-/*
-  صورة profile.png نفسها بخلفية شفافة حقيقية (Alpha) مع حواف متلاشية
-  (Feathered) وتدرّج لوني دافئ مطبّق مسبقاً على الصورة نفسها، فتندمج مباشرة
-  مع صورة الغابة خلفها بدون أي صندوق أو حواف حادة. الصورة مثبّتة بأسفل
-  الصندوق (object-position: bottom) عشان تبان واقفة على أرضية، مو عائمة
-  بالمنتصف. أضفنا drop-shadow خفيف تحتها عشان تبين لها عمق طبيعي.
-  إذا رجعت تستخدم صورة بخلفية عادية (مو شفافة)، رجّع object-fit: cover
-  وأضف تأثير mask-image زي القديم عشان تتلاشى حوافها.
-*/
+/* الصورة نفسها حادة وواضحة بدون أي تمويه أو تلاشي — الإطار هو اللي يفصلها عن الخلفية */
 .hero-media img {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.4));
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* ============================== فاصل زخرفي بين الأقسام ============================== */
@@ -590,7 +557,7 @@ ul { list-style: none; }
   /* ترتيب Hero على الجوال: القائمة (خارج هذا القسم) ← الصورة ← العنوان ← الأزرار */
   .hero-media {
     order: -1;
-    max-width: 280px;
+    max-width: 380px;
     aspect-ratio: 4 / 5; /* نسبة ثابتة عرض:ارتفاع حتى لا يطول الصندوق بشكل عشوائي */
     margin: 0 auto 32px;  /* مسافة واضحة بين الصورة والعنوان اللي بعدها */
   }
@@ -643,7 +610,7 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .hero { padding-top: 24px; }
-  .hero-media { max-width: 220px; margin: 0 auto 24px; }
+  .hero-media { max-width: 290px; margin: 0 auto 24px; }
   .hero-text h1 { font-size: 1.5rem; }
   .hero-title { font-size: 1.1rem; }
   .section-head h2 { font-size: 1.5rem; }
