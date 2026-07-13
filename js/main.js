@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---------- 2) قسم البداية (Hero) ----------
   document.getElementById("nav-brand").textContent = c.hero.name;
+  document.getElementById("hero-eyebrow").textContent = c.hero.eyebrow;
   document.getElementById("hero-name").textContent = c.hero.name;
   document.getElementById("hero-title").textContent = c.hero.title;
   document.getElementById("hero-subtitle").textContent = c.hero.subtitle;
-  document.getElementById("hero-quote").textContent = `« ${c.hero.quote} »`;
   document.getElementById("hero-cta-text").textContent = c.hero.ctaText;
   document.getElementById("hero-cta").href = c.social.instagramUrl;
   document.getElementById("hero-image").src = c.hero.profileImage;
