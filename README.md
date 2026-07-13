@@ -31,7 +31,7 @@
 
 1. ضع صورتك الجديدة داخل مجلد **images**.
 2. افتح **config.js**:
-   - لصورتك الشخصية: غيّر السطر `profileImage: "images/profile-placeholder.svg"` إلى اسم صورتك، مثلاً `profileImage: "images/profile.jpg"`.
+   - لصورتك الشخصية: غيّر السطر `profileImage: "images/profile-placeholder.svg"` إلى اسم صورتك، مثلاً `profileImage: "images/profile.png"` (يفضّل PNG إذا كانت الصورة بخلفية شفافة، أو JPG إذا كانت بخلفية عادية).
    - لصورة الشهادة: داخل `certifications > items`، غيّر السطر `image: "images/certificate-placeholder.svg"` إلى اسم صورتك، مثلاً `image: "images/certificate-visbody.jpg"`.
 
 حالياً الصور الموجودة (`profile-placeholder.svg` و `certificate-placeholder.svg`) هي صور مؤقتة فقط تشرح مكان كل صورة — استبدلها بصورك الحقيقية.
