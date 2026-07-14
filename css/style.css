@@ -124,9 +124,23 @@ ul { list-style: none; }
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 800;
   font-size: 1.15rem;
   letter-spacing: .3px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.brand span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -260,26 +274,21 @@ ul { list-style: none; }
 }
 
 /*
-  بطاقة/إطار واضح حول الصورة — تصميم مقصود بدل محاولة "دمج" الصورة بالخلفية.
-  خلفية شبه شفافة داكنة + حد ذهبي رفيع + ظل ناعم يعطيها عمق واحترافية.
-  لتغيير لون الحد: بدّل قيمة border إلى var(--color-primary) بدل الذهبي.
+  الشعار الرسمي الدائري (logo.png) مصمم بالكامل بحد ذاته (حلقة ذهبية + خلفية
+  كحلية)، فما يحتاج بوكس أو إطار أو ظل إضافي هنا — بس نتأكد إنه يتوسط
+  ويحافظ على شكله الدائري بدون أي تمدد أو قص.
 */
 .hero-media {
   position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 28px;
-  overflow: hidden;
-  background: linear-gradient(160deg, rgba(24, 42, 26, 0.8), rgba(14, 26, 16, 0.7));
-  border: 3px solid #c8983f;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1 / 1;
+  max-width: 460px;
+  margin: 0 auto;
 }
 
-/* الصورة نفسها حادة وواضحة بدون أي تمويه أو تلاشي — الإطار هو اللي يفصلها عن الخلفية */
 .hero-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
 }
 
 /* ============================== فاصل زخرفي بين الأقسام ============================== */
@@ -557,8 +566,8 @@ ul { list-style: none; }
   /* ترتيب Hero على الجوال: القائمة (خارج هذا القسم) ← الصورة ← العنوان ← الأزرار */
   .hero-media {
     order: -1;
-    max-width: 380px;
-    aspect-ratio: 4 / 5; /* نسبة ثابتة عرض:ارتفاع حتى لا يطول الصندوق بشكل عشوائي */
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
     margin: 0 auto 32px;  /* مسافة واضحة بين الصورة والعنوان اللي بعدها */
   }
   .about-grid { grid-template-columns: 1fr; }
@@ -610,7 +619,7 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .hero { padding-top: 24px; }
-  .hero-media { max-width: 290px; margin: 0 auto 24px; }
+  .hero-media { max-width: 230px; margin: 0 auto 24px; }
   .hero-text h1 { font-size: 1.5rem; }
   .hero-title { font-size: 1.1rem; }
   .section-head h2 { font-size: 1.5rem; }
